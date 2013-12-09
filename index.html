@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Classing Test</title>
+	<style>
+		.container{
+			margin: 20px auto;
+			max-width: 800px;
+			padding: 40px;
+			width: 90%;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Eventually</h1>
+		<h2>Test Page</h2>
+		<p>This is a page to test Eventually, a script that allows you to use <strong>addEvent</strong> or <strong>removeEvent</strong> functions to take advantage of <em>addEventListener</em> or <em>removeEventListener</em> and not worry about old browsers.</p>
+		<p>Here you have the new functions you'll be using to achieve this:</p>
+		<ul>
+			<li><strong>addEvent</strong>("queryString", "event", function)</li>
+			<li><strong>removeEvent</strong>("queryString", "event", function)</li>
+		</ul>
+		<ul>
+			<li><strong>queryString: </strong>here goes your selector like <em>"a.btn"</em> or <em>".call-to-action"</em></li>
+			<li><strong>event: </strong>here goes the <em>event</em> indeed.</li>
+			<li><strong>function: </strong>and here goes the function you want to add.</li>
+		</ul>
+		<button class="adding">Add event</button>
+		<button class="removing">Remove event</button>
+		<button class="cta">Call to action</button>
+		<p>Try it up and let me know if there are any bugs!</p>
+		<p>Jeremias Menichelli</p>
+	</div>
+	<script src="js/eventually.js"></script>
+	<script>
+		var alerting = function(){
+			alert("Hey! I have an event!");
+			return false
+		};
+		var addAlert = function(){
+			addEvent('.cta', 'click', alerting)
+		};
+		var removeAlert = function(){
+			removeEvent('.cta', 'click', alerting)
+		};
+		addEvent('.adding', 'click', addAlert);
+		addEvent('.removing', 'click', removeAlert);
+	</script>
+</body>
+</html>
