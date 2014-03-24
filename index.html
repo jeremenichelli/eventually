@@ -16,14 +16,13 @@
 	<div class="container">
 		<h1>Eventually</h1>
 		<h2>Test Page</h2>
-		<p>This is a page to test Eventually, a script that allows you to use <strong>addEvent</strong> or <strong>removeEvent</strong> functions to take advantage of <em>addEventListener</em> or <em>removeEventListener</em> and not worry about old browsers.</p>
+		<p>Eventually allows you to use <strong>addEvent</strong> or <strong>removeEvent</strong> functions to take advantage of <em>addEventListener</em> or <em>removeEventListener</em> and not worry about old browsers.</p>
 		<p>Here you have the new functions you'll be using to achieve this:</p>
 		<ul>
-			<li><strong>addEvent</strong>("queryString", "event", function)</li>
-			<li><strong>removeEvent</strong>("queryString", "event", function)</li>
+			<li>elem<strong>.addEvent</strong>("event", function)</li>
+			<li>elem<strong>.removeEvent</strong>("event", function)</li>
 		</ul>
 		<ul>
-			<li><strong>queryString: </strong>here goes your selector like <em>"a.btn"</em> or <em>".call-to-action"</em></li>
 			<li><strong>event: </strong>here goes the <em>event</em> indeed.</li>
 			<li><strong>function: </strong>and here goes the function you want to add.</li>
 		</ul>
@@ -35,18 +34,27 @@
 	</div>
 	<script src="js/eventually.js"></script>
 	<script>
-		var alerting = function(){
+		var cta = document.querySelector('.cta');
+		var addBtn = document.querySelector('.adding');
+		var removeBtn = document.querySelector('.removing');
+
+		var alerting = function(e){
+			e.preventDefault();
 			alert("Hey! I have an event!");
-			return false
 		};
-		var addAlert = function(){
-			addEvent('.cta', 'click', alerting)
+
+		var addAlert = function(e){
+			e.preventDefault();
+			cta.addEvent('click', alerting)
 		};
-		var removeAlert = function(){
-			removeEvent('.cta', 'click', alerting)
+
+		var removeAlert = function(e){
+			e.preventDefault();
+			cta.removeEvent('click', alerting)
 		};
-		addEvent('.adding', 'click', addAlert);
-		addEvent('.removing', 'click', removeAlert);
+
+		addBtn.addEvent('click', addAlert);
+		removeBtn.addEvent('click', removeAlert);
 	</script>
 </body>
 </html>
