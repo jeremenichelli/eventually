@@ -1,7 +1,7 @@
 eventually
 ==========
 
-This script that prototypes an _addEvent_ function and a _removeEvent_ function for HTML elements.
+This script that prototypes an __addEvent__ function and a __removeEvent__ function for HTML elements.
 
 In case the browser supports addEventListener and removeEventListener it will use it, if not it will introduce a fallback for browsers like IE8.
 
