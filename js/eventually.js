@@ -20,6 +20,12 @@
 			}
 		}
 
+		if (!Event.prototype.stopPropagation) {
+		    Event.prototype.stopPropagation=function() {
+		      this.cancelBubble=true;
+		    };
+		  }
+
 		els.prototype.addEvent = function(ev, fn){
 			this.attachEvent("on"+ev, fn);
 		}
