@@ -4,33 +4,56 @@
 	<meta charset="UTF-8">
 	<title>Eventually // eventListeners js fallback</title>
 	<style>
+		body {
+			background: #CDCDA4;
+			color: #222222;
+			font-size: 16px;
+			font-family: Helvetica, Arial, sans-serif;
+		}
 		.container{
 			margin: 20px auto;
 			max-width: 800px;
 			padding: 40px;
 			width: 90%;
 		}
+		a{
+			color: #AB6521;
+		}
+		.btn {
+		    background: none repeat scroll 0 0 #1D1F21;
+		    border: 0 none;
+		    border-radius: 3px;
+		    color: #FFFFFF;
+		    font-size: 12px;
+		    height: 22px;
+		    padding: 2px 15px;
+		    text-decoration: none;
+		    vertical-align: middle;
+		}
+		.btn:active {
+			background: none repeat scroll 0 0 #3F3F51;
+		}
 	</style>
 </head>
 <body>
 	<div class="container">
 		<h1>Eventually</h1>
-		<h2>Test Page</h2>
-		<p>Eventually is a small fallback for browser like <strong>IE8</strong> that don't support <em>addEventListener</em> or <em>removeEventListener</em>.</p>
+		<p>Eventually is a small fallback for browsers like <strong>IE8</strong> that don't support <em>addEventListener</em> or <em>removeEventListener</em>.</p>
 		<p>Here you have the new functions you'll be using to achieve this:</p>
 		<ul>
 			<li>elem<strong>.addEvent</strong>("event", function)</li>
 			<li>elem<strong>.removeEvent</strong>("event", function)</li>
 		</ul>
 		<ul>
-			<li><strong>event: </strong>here goes the <em>event</em> indeed.</li>
-			<li><strong>function: </strong>and here goes the function you want to add.</li>
+			<li><strong>event: </strong>here goes the <em>type of event</em>.</li>
+			<li><strong>function: </strong>and here goes the <em>function name</em> you want to add.</li>
 		</ul>
+		<p>You can also send an anonymous function as an argument.</p>
+		<p>Here you have three buttons. The first one adds an event, the second one removes it and the third triggers it.</p>
 		<button class="adding">Add event</button>
 		<button class="removing">Remove event</button>
 		<button class="cta">Call to action</button>
-		<p>Try it up and let me know if there are any bugs!</p>
-		<p>Jeremias Menichelli</p>
+		<p>Try it up and let me know if there are any bugs, enjoy! <a href="https://www.github.com/jeremenichelli" class="btn">me on GitHub</a> <a href="https://www.github.com/jeremenichelli/eventually" class="btn">eventually on GitHub</a></p>
 	</div>
 	<script src="js/eventually.js"></script>
 	<script>
